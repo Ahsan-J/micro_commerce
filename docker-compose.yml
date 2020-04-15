@@ -1,0 +1,94 @@
+version: '3.7'
+services:
+  users:
+    build: ./users
+    container_name: dukaan_user
+    environment: 
+      - ENV=development
+      - PORT=8000
+    ports:
+      - "1000:8000"
+    network_mode: bridge
+    # networks:
+    #   - default
+
+  # cart:
+  #   build: ./cart
+  #   container_name: dukaan_cart
+  #   environment: 
+  #     - ENV=development
+  #     - PORT=8000
+  #   expose: 
+  #     - 2000
+  #   ports:
+  #     - "2000:8000"
+  #   network_mode: host
+  #   # networks:
+  #     # - dukaan
+
+  # products:
+  #   build: ./products
+  #   container_name: dukaan_products
+  #   expose: 
+  #     - 3000
+  #   ports:
+  #     - "3000:8080"
+  #   network_mode: host
+  #   # networks:
+  #     # - dukaan
+
+
+  # logistics:
+  #   build: ./logistics
+  #   container_name: dukaan_logistics
+  #   environment: 
+  #     - ENV=development
+  #     - PORT=8000
+  #   expose: 
+  #     - 4000
+  #   ports:
+  #     - "4000:8080"
+  #   network_mode: host
+    # networks:
+      # - dukaan
+
+
+  # redis:
+  #   image: redis:5.0.8
+  #   container_name: dukaan_redis
+  #   # restart: always
+  #   expose: 
+  #     - "6397"
+  #   # networks:
+  #     # - dukaan
+  
+  # mongo:
+  #   image: mongo:4.2.5
+  #   container_name: dukaan_mongo
+  #   # restart: always
+  #   environment: 
+  #     MONGO_INITDB_ROOT_USERNAME: root
+  #     MONGO_INITDB_ROOT_PASSWORD: admin
+  #   expose: 
+  #     - "27017"
+  #   command: mongod --dbpath=/data/db
+  #   volumes:
+  #     - dukaan_mongodata:/data/db
+  #   # networks:
+  #     # - dukaan
+
+  # rabbitmq:
+  #   image: rabbitmq:3.8.3
+  #   container_name: dukaan_rabbitmq
+  #   # networks:
+  #     # - dukaan
+
+# networks:
+  # dukaan:
+    # external: true
+# networks:
+#   default:
+#     external:
+#       name: dukaan
+volumes:
+  dukaan_mongodata:

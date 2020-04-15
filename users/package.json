@@ -1,0 +1,66 @@
+{
+  "name": "user_module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.ts",
+  "scripts": {
+    "start": "ts-node src/server.ts",
+    "dev": "nodemon --exec ts-node src/server.ts",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@koa/router": "^8.0.2",
+    "graphql": "^14.6.0",
+    "koa": "^2.10.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-graphql": "^0.8.0",
+    "koa-mount": "^4.0.0",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "mongoose": "^5.9.7",
+    "shortid": "^2.2.15"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "json",
+      "ts",
+      "js"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{ts,js}",
+      "!**/node_modules/**"
+    ],
+    "transform": {
+      "\\.ts$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "coverageReporters": [
+      "text",
+      "text-summary"
+    ],
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(js|ts)x?$",
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.22",
+    "@types/koa": "^2.11.3",
+    "@types/koa-bodyparser": "^4.3.0",
+    "@types/koa-graphql": "^0.8.3",
+    "@types/koa-mount": "^4.0.0",
+    "@types/koa__router": "^8.0.0",
+    "@types/lodash": "^4.14.144",
+    "@types/mongoose": "^5.7.10",
+    "@types/shortid": "0.0.29",
+    "@types/supertest": "^2.0.8",
+    "jest": "^24.9.0",
+    "nodemon": "^2.0.3",
+    "supertest": "^4.0.2",
+    "ts-jest": "^24.1.0",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.4"
+  },
+  "author": "Ahsan",
+  "license": "ISC"
+}
