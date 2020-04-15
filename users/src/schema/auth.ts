@@ -24,7 +24,9 @@ export const login ={
         }
         
         try {
-            return await User.findOne({ email: args.email, password: args.password })
+            return await U
+            
+            ser.findOne({ email: args.email, password: args.password })
         }
         catch(e) {
             return {

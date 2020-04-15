@@ -1,6 +1,7 @@
 import { GraphQLObjectType, GraphQLSchema, GraphQLString, GraphQLID } from 'graphql';
 import adminType, { adminQuery, addAdminMutation } from './admin'
 import { login, signup } from './auth';
+import { addVendor } from './vendor';
 
 const RootQuery = new GraphQLObjectType({
     name: "RootQueryType",
@@ -18,6 +19,7 @@ const RootMutation = new GraphQLObjectType({
     fields: {
         // admin
         registerAdmin: addAdminMutation,
+        registerVendor: addVendor,
 
         // authentication
         signup,
