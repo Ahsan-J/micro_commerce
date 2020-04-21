@@ -1,2 +1,15 @@
+### Users (NodeJS) ###
 users/node_modules
+
+### Cart (Golang) ###
 cart/vendor
+
+### Common (Java) ###
+common/HELP.md
+common/target/
+!common/.mvn/wrapper/maven-wrapper.jar
+!common/**/src/main/**
+!common/**/src/test/**
+
+### VS Code ###
+**/.vscode/

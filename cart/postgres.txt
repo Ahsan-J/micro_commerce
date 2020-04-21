@@ -1,0 +1,1 @@
+docker container run -p 5432:5432 -it --rm -v pgdata:/var/lib/postgresql/data --name postgresql -e POSTGRES_PASSWORD=admin -d postgres:12.2
