@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package cart;
+option go_package = "grpc/cart";
+
+message Cart {
+    string id=1;
+	string userId=2;
+	int64  status=3;
+	string createdAt=4;
+}
+
+message GetCartRequest {
+    string cartId = 1;
+}
+
+message ResponseCart {
+    Cart data=1;
+    bool successful = 2;
+    string message = 3;
+    int32 status = 4;
+}
+
+message CreateCartRequest {
+    string userId = 1;
+}
+
+service CartService {
+    rpc GetCart(GetCartRequest) returns (ResponseCart);
+    rpc CreateCart(CreateCartRequest) returns (ResponseCart);
+}
