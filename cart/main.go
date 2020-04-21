@@ -1,29 +1,27 @@
 package main
 
 import (
+	// "cart/db"
+	"cart/db"
+	"cart/helper"
+	"cart/rabbitmq"
+	"cart/router"
 	"log"
 	"net/http"
-	"os"
-	"cart/routes"
+	"strconv"
+
 	"github.com/gorilla/mux"
+	_ "github.com/lib/pq"
+	_ "google.golang.org/grpc"
 )
 
-func main ()  {
-	
-	addr := determineListenAddress()
-
+func main() {
+	config := helper.GetConfiguration()
+	go db.ConnectToDatabse()
+	go rabbitmq.ConnectToRabbitMQ()
 	r := mux.NewRouter()
-	routes.GenerateRoutes(r)
-	
-	log.Println("Serving at port = " + addr + "...")
-	log.Fatal(http.ListenAndServe(addr, r))
-}
+	router.GenerateRoutes(r)
 
-
-func determineListenAddress() string {
-	port := os.Getenv("PORT")
-	if port == "" {
-		return ":7000"
-	}
-	return ":" + port
+	log.Println("Serving at port = " + strconv.Itoa(config.Port) + "...")
+	log.Fatal(http.ListenAndServe(":"+strconv.Itoa(config.Port), r))
 }

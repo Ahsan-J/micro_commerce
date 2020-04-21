@@ -1,0 +1,17 @@
+{
+    "port": 4000,
+    "postgresURL" : "user=postgres password=admin dbname=cart sslmode=disable",
+    "rabbitMQ_URL": "amqp://root:admin@localhost:5672/",
+    "exchange" :{
+        "cart": "MICROSERVICE_CART_EXCHANGE",
+        "common": "MICROSERVICE_COMMON_EXCHANGE",
+        "product": "MICROSERVICE_PRODUCT_EXCHANGE",
+        "logistic": "MICROSERVICE_LOGISTIC_EXCHANGE"
+    },
+    "queue" :{
+        "cart": "MICROSERVICE_CART_QUEUE",
+        "common": "MICROSERVICE_COMMON_QUEUE",
+        "product": "MICROSERVICE_PRODUCT_QUEUE",
+        "logistic": "MICROSERVICE_LOGISTIC_QUEUE"
+    }
+}

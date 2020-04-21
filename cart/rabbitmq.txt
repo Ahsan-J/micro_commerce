@@ -1,1 +1,0 @@
-docker container run -d --hostname generic-mq --name rabbitmq-management -e RABBITMQ_DEFAULT_USER=root -e RABBITMQ_DEFAULT_PASS=admin -p 5671-5672:5671-5672 -p 25672:25672 -p 15671-15672:15671-15672 -p 4369:4369 rabbitmq:3.8.3-management
